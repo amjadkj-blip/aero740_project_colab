@@ -24,7 +24,7 @@ for i = 1:4
     u(i) = input_mag(i); 
     % free-fall (fz=0 => zddot=-g)
     if i ~= 1
-        u(1) = m * g;
+        u(1) = m * g; % div by aitt angles 
     end
     % Simulate
     [t, s] = ode45(@(t,s) dynamics(t, s, u, params), tspan, s0);
